@@ -1,3 +1,3 @@
 # Tells GitHub to not diagnose files inside .cptk directories
 # for language analysis in the repository. https://tinyurl.com/y4a7jtyw
-**/.cptk/** linguist-vendored
+(.*?)/.cptk/** linguist-vendored
