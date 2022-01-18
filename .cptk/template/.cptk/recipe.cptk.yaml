@@ -1,0 +1,6 @@
+solution:
+  bake: |
+    g++ ${{name}}.cpp -DLOCAL -O2 -o ${{name}}
+
+  serve: |
+    ./${{name}}

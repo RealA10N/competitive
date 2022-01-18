@@ -1,0 +1,4 @@
+clone:
+  template: .cptk/template
+  preprocess: .cptk/preprocess.py
+  path: ${{ path }}
