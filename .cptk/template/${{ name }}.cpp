@@ -7,7 +7,7 @@ using namespace std;
 
 #define int long long
 #define all(x) (x).begin(), (x).end()
-#define fori(i, n) for (int i = 0; i < n; i++)
+#define fori(n, i) for (int i = 0; i < n; i++)
 
 typedef vector<int> vi;
 typedef vector<vi> vvi;
