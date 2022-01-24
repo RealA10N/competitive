@@ -5,8 +5,5 @@
 {% endif -%}
 {% set name = slug(name) -%}
 solution:
-  bake: |
-    g++ {{name}}.cpp -DLOCAL -O2 -o {{name}}
-
-  serve: |
-    ./{{name}}
+  bake: g++ {{name}}.cpp -DLOCAL -O2 -o {{name}}
+  serve: ./{{name}}
