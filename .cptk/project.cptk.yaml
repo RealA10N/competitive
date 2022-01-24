@@ -6,6 +6,8 @@ clone:
     {{ problem.group | slug }}/{% endif %}\
     {% if problem.contest is defined %}\
     {{ problem.contest.name | slug }}/{% endif %}\
+    {% if problem.section is defined %}\
+    {{ problem.section | slug }}/{% endif %}\
     {% if problem.mark is defined %}\
     {{ problem.mark | slug }}-{% endif %}\
     {{ problem.name | slug }}"
