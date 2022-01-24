@@ -1,4 +1,11 @@
 clone:
   template: .cptk/template
-  preprocess: .cptk/preprocess.py
-  path: ${{ path }}
+  path: "\
+    {{ problem.website.domain | lower }}/\
+    {% if problem.group is defined %}\
+    {{ problem.group | slug }}/{% endif %}\
+    {% if problem.contest is defined %}\
+    {{ problem.contest.name | slug }}/{% endif %}\
+    {% if problem.mark is defined %}\
+    {{ problem.mark | slug }}-{% endif %}\
+    {{ problem.name | slug }}"
