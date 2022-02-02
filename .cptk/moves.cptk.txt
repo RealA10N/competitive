@@ -1,1 +1,2 @@
 cses.fi/cses-problem-set::cses.fi/problemset
+codeforces.com/codeforces-beta-round-65-div-2/round65::codeforces.com/round65div2
