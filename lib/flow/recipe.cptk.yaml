@@ -1,0 +1,3 @@
+flow:
+  bake: g++ main.cpp flow.cpp -DLOCAL -O2 -o flow.out
+  serve: ./flow.out
