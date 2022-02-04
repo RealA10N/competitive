@@ -1,3 +1,8 @@
 # Tells GitHub to not diagnose files inside .cptk directories
 # for language analysis in the repository. https://tinyurl.com/y4a7jtyw
-**/.cptk/ linguist-vendored
+.cptk/ linguist-vendored
+
+# Hide large test input and output cases from the git diff. 
+# Sources: https://youtu.be/zVlISs2fnzw https://tinyurl.com/yxattcf5
+in*.txt binary
+out*.txt binary
