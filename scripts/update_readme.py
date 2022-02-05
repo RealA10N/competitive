@@ -111,10 +111,15 @@ def folders_pie_data(data: list[Folder], colors: list[str]) -> dict:
                             'font': {'size': 20, 'weight': 'bold'},
                         },
                         {
-                            'text': 'total',
+                            'text': 'problems',
                             'font': {'size': 12},
                             'color': TITLE_COLOR,
-                        }
+                        },
+                        {
+                            'text': 'solved',
+                            'font': {'size': 12},
+                            'color': TITLE_COLOR,
+                        },
                     ]
                 }
             }
