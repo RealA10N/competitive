@@ -1,0 +1,35 @@
+name: Update README.md 📝
+on: push
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    name: Update README.md 📝
+    steps:
+        
+      - name: Clone repository ⏬
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
+      - name: Install Python 🐍
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      
+      - name: Install dependencies 🏗️
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r scripts/requirements.txt
+
+      - name: Update README.md 🔃
+        run: python3 scripts/update_readme.md
+      
+      - name: Commit changes 📑
+        run: git commit -m "[🤖] README.md Update" -a
+        
+      - name: Push changes ⏫
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
