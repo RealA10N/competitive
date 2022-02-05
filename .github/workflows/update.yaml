@@ -24,11 +24,10 @@ jobs:
 
       - name: Update README.md 🔃
         run: python3 scripts/update_readme.py
-      
-      - name: Configure @actions user 🤖
-        uses: fregante/setup-git-user@v1
 
       - name: Commit and push ⏫
         run: |
-          git commit -m "[🤖] README.md Update" -a
+          git config --local user.email "action@github.com"
+          git config --local user.name "[BOT]"
+          git commit -m "🤖 README.md Update" -a
           git push
