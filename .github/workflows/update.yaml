@@ -1,4 +1,4 @@
-name: Update README.md 📝
+name: UPDATE
 on: push
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
           python3 -m pip install -r scripts/requirements.txt
 
       - name: Update README.md 🔃
-        run: python3 scripts/update_readme.md
+        run: python3 scripts/update_readme.py
       
       - name: Commit changes 📑
         run: git commit -m "[🤖] README.md Update" -a
