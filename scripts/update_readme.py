@@ -93,8 +93,8 @@ def folders_pie_data(data: list[Folder], colors: list[str]) -> dict:
                     "stretch": 35,
                     "font": {
                         "resizable": True,
-                        "minSize": 12,
-                        "maxSize": 18,
+                        "minSize": 18,
+                        "maxSize": 24,
                     }
                 }
             }
@@ -110,7 +110,7 @@ def create_jinja_env():
 
     env.globals.update({
         'foldersData': folders_data,
-        'foldersPieUrl': chart_url(chart_data, width=500, height=500),
+        'foldersPieUrl': chart_url(chart_data, width=800, height=800),
         'problemsCount': sum(len(folder.recipes) for folder in folders_data),
     })
 
