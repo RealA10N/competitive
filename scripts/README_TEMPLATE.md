@@ -1,4 +1,4 @@
-<img align="right" width=450 src="{{foldersPieUrl}}">
+<img align="right" width=500 src="{{foldersPieUrl}}">
 
 # competitive [![cptk](https://img.shields.io/static/v1?label=using&message=cptk&color=0094C6)](https://github.com/RealA10N/cptk)
 

@@ -133,7 +133,7 @@ def create_jinja_env():
 
     env.globals.update({
         'foldersData': folders_data,
-        'foldersPieUrl': chart_url(chart_data, width=450, height=450),
+        'foldersPieUrl': chart_url(chart_data, width=500, height=500),
         'problemsCount': sum(len(folder.recipes) for folder in folders_data),
     })
 
