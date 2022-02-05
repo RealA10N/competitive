@@ -13,7 +13,8 @@ HERE = os.path.dirname(ME)
 ROOT = os.path.dirname(HERE)
 README_TEMPLATE = os.path.join(HERE, 'README_TEMPLATE.md')
 README_OUTPUT = os.path.join(ROOT, 'README.md')
-SEARCH_FILE = '*.cpp'  # TODO: change to cptk recipe
+SEARCH_EXCLUDE_DIRS = ['scripts', '.cptk', '.git', '.github']
+SEARCH_FILES = ['*.cpp', '*.cc', '*.c', '*.py']  # TODO: change to cptk recipe
 
 COLORS = [
     '#0094C6',
@@ -57,16 +58,19 @@ def load_folders_data(root: str) -> list[Folder]:
         (dir, os.path.join(root, dir))
         for dir in os.listdir(root)
         if os.path.isdir(os.path.join(root, dir))
-        and not dir.startswith('.')
+        and dir not in SEARCH_EXCLUDE_DIRS
     ]
 
     data = [
         Folder(
             name=name,
-            recipes=glob(f'{fullpath}/**/{SEARCH_FILE}', recursive=True),
+            recipes=[
+                recipe
+                for fileglob in SEARCH_FILES
+                for recipe in glob(f'{fullpath}/**/{fileglob}', recursive=True)
+            ],
         )
         for name, fullpath in dirs
-        if glob(f'{fullpath}/**/{SEARCH_FILE}', recursive=True)
     ]
 
     data.sort(key=lambda folder: len(folder.recipes), reverse=True)
