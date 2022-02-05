@@ -25,11 +25,8 @@ jobs:
       - name: Update README.md 🔃
         run: python3 scripts/update_readme.py
       
-      - name: Commit changes 📑
-        run: git commit -m "[🤖] README.md Update" -a
-        
-      - name: Push changes ⏫
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      - name: Commit and push ⏫
+        uses: fregante/setup-git-user@v1
+        run: |
+          git commit -m "[🤖] README.md Update" -a
+          git push
