@@ -16,14 +16,13 @@ README_OUTPUT = os.path.join(ROOT, 'README.md')
 SEARCH_FILE = '*.cpp'  # TODO: change to cptk recipe
 
 COLORS = [
-    "#F77825",
-    "#36A2EB",
-    "#FF3784",
-    "#9966FF",
-    '#37db50',
+    '#0094C6',
+    "#13C4A3",
     "#4BC0C0",
-    '#ffbb00',
-    '#f72f0c'
+    "#005E7C",
+    "#84DD63",
+    '#36F1CD',
+    '#B0FE76'
 ]
 
 
@@ -90,11 +89,11 @@ def folders_pie_data(data: list[Folder], colors: list[str]) -> dict:
                 "outlabels": {
                     "text": "%l (%v)",
                     "color": "white",
-                    "stretch": 35,
+                    "stretch": 52,
                     "font": {
                         "resizable": True,
-                        "minSize": 18,
-                        "maxSize": 24,
+                        "minSize": 24,
+                        "maxSize": 32,
                     }
                 }
             }

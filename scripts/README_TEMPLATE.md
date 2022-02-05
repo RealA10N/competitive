@@ -1,6 +1,6 @@
-<img align="right" width=400 src="{{foldersPieUrl}}">
+<img align="right" width=450 src="{{foldersPieUrl}}">
 
-# competitive [![cptk](https://img.shields.io/static/v1?label=using&message=cptk&color=ffbb00)](https://github.com/RealA10N/cptk)
+# competitive [![cptk](https://img.shields.io/static/v1?label=using&message=cptk&color=0094C6)](https://github.com/RealA10N/cptk)
 
 A collection of all of the competitive programming problems that I have solved 
 (or attempted to solve, at least).
