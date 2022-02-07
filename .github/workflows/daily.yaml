@@ -1,5 +1,7 @@
-name: UPDATE
-on: push
+name: DAILY
+on: 
+  schedule:
+    - cron: '0 0 * * *' # Every day at midnight.
 
 jobs:
   update:
@@ -9,8 +11,6 @@ jobs:
         
       - name: Clone repository ⏬
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       
       - name: Install Python 🐍
         uses: actions/setup-python@v2
@@ -29,5 +29,5 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Actions [BOT]"
-          git commit -m "🤖 README.md Update" -a
+          git commit -m "🤖 README.md Update" -a || echo "No changes to commit ✅"
           git push

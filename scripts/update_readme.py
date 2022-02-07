@@ -74,7 +74,7 @@ def load_folders_data(root: str) -> list[Folder]:
     ]
 
     data.sort(key=lambda folder: len(folder.recipes), reverse=True)
-    return data
+    return [d for d in data if len(d.recipes)]
 
 
 def folders_pie_data(data: list[Folder], colors: list[str]) -> dict:
@@ -133,10 +133,7 @@ def folders_pie_data(data: list[Folder], colors: list[str]) -> dict:
 
 def create_jinja_env():
     folders_data = load_folders_data(ROOT)
-    chart_data = folders_pie_data(
-        folders_data[::-1],
-        COLORS[:len(folders_data)]
-    )
+    chart_data = folders_pie_data(folders_data, COLORS[:len(folders_data)])
 
     env = jinja2.Environment()
 
@@ -147,7 +144,7 @@ def create_jinja_env():
     })
 
     env.filters.update({
-        'percentage': lambda ratio: f'{ratio*100:.2f}%',
+        'percentage': lambda ratio: f'{ratio*100:.0f}%',
     })
 
     return env
