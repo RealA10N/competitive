@@ -1,3 +1,5 @@
+# cptk==0.1.0a0
+
 clone:
   template: .cptk/template
   path: "\
@@ -11,3 +13,7 @@ clone:
     {% if problem.mark is defined %}\
     {{ problem.mark | slug }}-{% endif %}\
     {{ problem.name | slug }}"
+  recipe:
+    name: "{{ problem.name | slug }}"
+    bake: "g++ {{ problem.name | slug }}.cpp -DLOCAL -O2 -Wall -o {{ problem.name | slug }}"
+    serve: "./{{ problem.name | slug }}"

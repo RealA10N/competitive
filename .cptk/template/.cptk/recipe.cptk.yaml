@@ -1,9 +1,0 @@
-{% if problem.mark is defined -%}
-{% set name = problem.mark ~ '-' ~ problem.name -%}
-{% else -%}
-{% set name = problem.name -%}
-{% endif -%}
-{% set name = slug(name) -%}
-solution:
-  bake: g++ {{name}}.cpp -DLOCAL -O2 -o {{name}}
-  serve: ./{{name}}
