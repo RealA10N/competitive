@@ -5,22 +5,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// clang-format off
+void solution();
 #define int long long
 #define all(x) (x).begin(), (x).end()
 #define fori(n, i) for (int i = 0; i < n; i++)
+#define cases int _t = 1; cin >> _t; while(_t--)
+#define solution() signed main() { cin.tie(NULL)->sync_with_stdio(false); \
+    cout<<fixed<<setprecision(10); solution(); } void solution()
+// clang-format on
 
 typedef vector<int> vi;
-typedef vector<vi> vvi;
 typedef pair<int, int> ii;
-typedef tuple<int, int, int> iii;
 
-void solve();
-signed main() {
-    cin.tie(NULL)->sync_with_stdio(false);
-    cout << fixed << setprecision(10);
-    int t = 1;
-    // cin >> t;
-    while (t--) solve();
+solution() {
+    
 }
-
-void solve() {}
