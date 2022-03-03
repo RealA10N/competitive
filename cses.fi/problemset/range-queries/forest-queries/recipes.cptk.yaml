@@ -1,0 +1,8 @@
+recipes:
+- name: forest-queries
+  bake:
+  - g++ forest-queries.cpp -DLOCAL -O2 -Wall -o forest-queries
+  serve: ./forest-queries
+  test:
+    folder: tests
+    timeout: 1.0
