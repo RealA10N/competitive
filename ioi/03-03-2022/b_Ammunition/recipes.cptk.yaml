@@ -1,0 +1,8 @@
+recipes:
+  - name: b_Ammunition
+    bake:
+    - g++ b_Ammunition.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Ammunition
+    serve: ./b_Ammunition
+    test:
+      folder: tests
+      timeout: 2
