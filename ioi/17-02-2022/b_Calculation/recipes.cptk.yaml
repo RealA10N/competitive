@@ -1,0 +1,8 @@
+recipes:
+  - name: b_Calculation
+    bake:
+    - g++ b_Calculation.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Calculation
+    serve: ./b_Calculation
+    test:
+      folder: tests
+      timeout: 1
