@@ -1,5 +1,7 @@
-# Ignore all cptk generated files
-**/.cptk/stayaway/
+# Ignores all files without a files extension
+*
+!*/
+!*.*
 
 # Prerequisites
 *.d
@@ -36,3 +38,7 @@
 
 # VSCode
 .vscode
+
+# cptk
+.cptk/stayaway/
+!**/tests/*.out
