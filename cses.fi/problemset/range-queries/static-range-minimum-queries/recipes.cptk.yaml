@@ -1,0 +1,8 @@
+recipes:
+- name: static-range-minimum-queries
+  bake:
+  - g++ static-range-minimum-queries.cpp -DLOCAL -O2 -Wall -o static-range-minimum-queries
+  serve: ./static-range-minimum-queries
+  test:
+    folder: tests
+    timeout: 1.0
