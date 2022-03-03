@@ -1,0 +1,8 @@
+recipes:
+- name: static-range-sum-queries
+  bake:
+  - g++ static-range-sum-queries.cpp -DLOCAL -O2 -Wall -o static-range-sum-queries
+  serve: ./static-range-sum-queries
+  test:
+    folder: tests
+    timeout: 1.0
