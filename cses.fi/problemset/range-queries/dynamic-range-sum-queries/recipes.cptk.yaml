@@ -1,0 +1,8 @@
+recipes:
+- name: dynamic-range-sum-queries
+  bake:
+  - g++ dynamic-range-sum-queries.cpp -DLOCAL -O2 -Wall -o dynamic-range-sum-queries
+  serve: ./dynamic-range-sum-queries
+  test:
+    folder: tests
+    timeout: 1.0
