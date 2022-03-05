@@ -1,0 +1,8 @@
+recipes:
+- name: company-queries-i
+  bake:
+  - g++ company-queries-i.cpp -DLOCAL -O2 -Wall -o company-queries-i
+  serve: ./company-queries-i
+  test:
+    folder: tests
+    timeout: 1.0
