@@ -1,0 +1,8 @@
+recipes:
+- name: distance-queries
+  bake:
+  - g++ distance-queries.cpp -DLOCAL -O2 -Wall -o distance-queries
+  serve: ./distance-queries
+  test:
+    folder: tests
+    timeout: 1.0
