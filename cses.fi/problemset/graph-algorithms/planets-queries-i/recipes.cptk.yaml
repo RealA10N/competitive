@@ -1,0 +1,22 @@
+recipes:
+- name: planets-queries-i
+  bake:
+  - g++ planets-queries-i.cpp -DLOCAL -O2 -Wall -o planets-queries-i
+  serve: ./planets-queries-i
+  test:
+    folder: tests
+    timeout: 1.0
+- name: planets-queries-i
+  bake:
+  - g++ planets-queries-i.cpp -DLOCAL -O2 -Wall -o planets-queries-i
+  serve: ./planets-queries-i
+  test:
+    folder: tests
+    timeout: 1.0
+- name: planets-queries-i
+  bake:
+  - g++ planets-queries-i.cpp -DLOCAL -O2 -Wall -o planets-queries-i
+  serve: ./planets-queries-i
+  test:
+    folder: tests
+    timeout: 1.0
