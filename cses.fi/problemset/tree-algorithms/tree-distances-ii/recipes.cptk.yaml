@@ -1,0 +1,8 @@
+recipes:
+- name: tree-distances-ii
+  bake:
+  - g++ tree-distances-ii.cpp -DLOCAL -O2 -Wall -o tree-distances-ii
+  serve: ./tree-distances-ii
+  test:
+    folder: tests
+    timeout: 1.0
