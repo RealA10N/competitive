@@ -1,0 +1,8 @@
+recipes:
+- name: planets-cycles
+  bake:
+  - g++ planets-cycles.cpp -DLOCAL -O2 -Wall -o planets-cycles
+  serve: ./planets-cycles
+  test:
+    folder: tests
+    timeout: 1.0
