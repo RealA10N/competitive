@@ -1,0 +1,8 @@
+recipes:
+- name: finding-a-centroid
+  bake:
+  - g++ finding-a-centroid.cpp -DLOCAL -O2 -Wall -o finding-a-centroid
+  serve: ./finding-a-centroid
+  test:
+    folder: tests
+    timeout: 1.0
