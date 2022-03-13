@@ -1,0 +1,8 @@
+recipes:
+- name: room-allocation
+  bake:
+  - g++ room-allocation.cpp -DLOCAL -O2 -Wall -o room-allocation
+  serve: ./room-allocation
+  test:
+    folder: tests
+    timeout: 1.0
