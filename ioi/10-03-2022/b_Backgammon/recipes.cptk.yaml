@@ -1,0 +1,8 @@
+recipes:
+  - name: b_Backgammon
+    bake:
+    - g++ b_Backgammon.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Backgammon
+    serve: ./b_Backgammon
+    test:
+      folder: tests
+      timeout: 1
