@@ -1,0 +1,8 @@
+recipes:
+  - name: b_Ducks
+    bake:
+    - g++ b_Ducks.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Ducks
+    serve: ./b_Ducks
+    test:
+      folder: tests
+      timeout: 1
