@@ -1,0 +1,8 @@
+recipes:
+- name: sliding-cost
+  bake:
+  - g++ sliding-cost.cpp -DLOCAL -O2 -Wall -o sliding-cost
+  serve: ./sliding-cost
+  test:
+    folder: tests
+    timeout: 1.0
