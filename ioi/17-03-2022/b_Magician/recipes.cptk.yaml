@@ -1,0 +1,8 @@
+recipes:
+  - name: b_Magician
+    bake:
+    - g++ b_Magician.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Magician
+    serve: ./b_Magician
+    test:
+      folder: tests
+      timeout: 7
