@@ -1,0 +1,8 @@
+recipes:
+- name: game-routes
+  bake:
+  - g++ game-routes.cpp -DLOCAL -O2 -Wall -o game-routes
+  serve: ./game-routes
+  test:
+    folder: tests
+    timeout: 1.0
