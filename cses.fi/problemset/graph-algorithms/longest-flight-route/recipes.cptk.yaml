@@ -1,0 +1,8 @@
+recipes:
+- name: longest-flight-route
+  bake:
+  - g++ longest-flight-route.cpp -DLOCAL -O2 -Wall -o longest-flight-route
+  serve: ./longest-flight-route
+  test:
+    folder: tests
+    timeout: 1.0
