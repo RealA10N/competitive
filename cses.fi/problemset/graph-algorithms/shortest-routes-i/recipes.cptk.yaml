@@ -1,0 +1,8 @@
+recipes:
+- name: shortest-routes-i
+  bake:
+  - g++ shortest-routes-i.cpp -DLOCAL -O2 -Wall -o shortest-routes-i
+  serve: ./shortest-routes-i
+  test:
+    folder: tests
+    timeout: 1.0
