@@ -1,0 +1,8 @@
+recipes:
+- name: high-score
+  bake:
+  - g++ high-score.cpp -DLOCAL -O2 -Wall -o high-score
+  serve: ./high-score
+  test:
+    folder: tests
+    timeout: 1.0
