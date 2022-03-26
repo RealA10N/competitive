@@ -1,0 +1,8 @@
+recipes:
+- name: book-shop
+  bake:
+  - g++ book-shop.cpp -DLOCAL -O2 -Wall -o book-shop
+  serve: ./book-shop
+  test:
+    folder: tests
+    timeout: 1.0
