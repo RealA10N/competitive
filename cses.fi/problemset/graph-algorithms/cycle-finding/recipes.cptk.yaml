@@ -1,0 +1,8 @@
+recipes:
+- name: cycle-finding
+  bake:
+  - g++ cycle-finding.cpp -DLOCAL -O2 -Wall -o cycle-finding
+  serve: ./cycle-finding
+  test:
+    folder: tests
+    timeout: 1.0
