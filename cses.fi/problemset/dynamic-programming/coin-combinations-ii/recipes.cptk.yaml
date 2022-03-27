@@ -1,0 +1,8 @@
+recipes:
+- name: coin-combinations-ii
+  bake:
+  - g++ coin-combinations-ii.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o coin-combinations-ii
+  serve: ./coin-combinations-ii
+  test:
+    folder: tests
+    timeout: 1.0
