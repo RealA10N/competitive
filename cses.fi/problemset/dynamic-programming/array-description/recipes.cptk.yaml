@@ -1,0 +1,8 @@
+recipes:
+- name: array-description
+  bake:
+  - g++ array-description.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o array-description
+  serve: ./array-description
+  test:
+    folder: tests
+    timeout: 1.0
