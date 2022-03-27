@@ -1,0 +1,8 @@
+recipes:
+- name: two-sets-ii
+  bake:
+  - g++ two-sets-ii.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o two-sets-ii
+  serve: ./two-sets-ii
+  test:
+    folder: tests
+    timeout: 1.0
