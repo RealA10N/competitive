@@ -1,0 +1,8 @@
+recipes:
+- name: counting-towers
+  bake:
+  - g++ counting-towers.cpp -DLOCAL -O2 -Wall -o counting-towers
+  serve: ./counting-towers
+  test:
+    folder: tests
+    timeout: 1.0
