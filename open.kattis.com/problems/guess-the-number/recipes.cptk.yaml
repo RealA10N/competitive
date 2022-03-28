@@ -1,0 +1,5 @@
+recipes:
+- name: guess-the-number
+  bake:
+  - g++ guess-the-number.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o guess-the-number
+  serve: ./guess-the-number
