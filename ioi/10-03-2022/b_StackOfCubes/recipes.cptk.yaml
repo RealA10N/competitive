@@ -1,0 +1,8 @@
+recipes:
+  - name: b_StackOfCubes
+    bake:
+    - g++ b_StackOfCubes.cpp grader.cpp -DLOCAL -O2 -Wall -o b_StackOfCubes
+    serve: ./b_StackOfCubes
+    test:
+      folder: tests
+      timeout: 1
