@@ -1,0 +1,8 @@
+recipes:
+- name: round-trip-ii
+  bake:
+  - g++ round-trip-ii.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o round-trip-ii
+  serve: ./round-trip-ii
+  test:
+    folder: tests
+    timeout: 1.0
