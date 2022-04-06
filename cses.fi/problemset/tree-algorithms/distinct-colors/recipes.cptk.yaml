@@ -1,0 +1,8 @@
+recipes:
+- name: distinct-colors
+  bake:
+  - g++ distinct-colors.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o distinct-colors
+  serve: ./distinct-colors
+  test:
+    folder: tests
+    timeout: 1.0
