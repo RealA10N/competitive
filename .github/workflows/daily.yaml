@@ -9,17 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     name: Update README.md 📝
     steps:
-        
+
+      - name: Set SSH agent ⚙️
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SUBMODULE_SSH }}
+
       - name: Clone repository ⏬
         uses: actions/checkout@v2
         with:
           submodules: true
-      
+
       - name: Install Python 🐍
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-      
+
       - name: Install dependencies 🏗️
         run: |
           python3 -m pip install --upgrade pip
@@ -39,17 +44,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Update Submodules 💫
     steps:
-      
-      - name: Setup SSH
-        run: |
-          eval `ssh-agent -s`
-          ssh-add - <<< '${{ secrets.SUBMODULE_SSH }}'
+
+      - name: Set SSH agent ⚙️
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SUBMODULE_SSH }}
 
       - name: Clone repository ⏬
         uses: actions/checkout@v2
         with:
           submodules: true
-      
+
       - name: Update Submodules 🔃
         run: git submodule update --recursive --remote
 
