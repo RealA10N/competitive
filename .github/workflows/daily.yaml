@@ -5,9 +5,9 @@ on:
     - cron: '0 0 * * *' # Every day at midnight.
 
 jobs:
-  readme:
+  daily:
     runs-on: ubuntu-latest
-    name: Update README.md 📝
+    name: DAILY
     steps:
 
       - name: Clone repository ⏬
@@ -15,6 +15,11 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           submodules: recursive
+
+      - name: Configure git 🤖
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions [BOT]"
 
       - name: Install Python 🐍
         uses: actions/setup-python@v2
@@ -29,30 +34,14 @@ jobs:
       - name: Update README.md 🔃
         run: python3 scripts/update_readme.py
 
-      - name: Commit and push ⏫
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Actions [BOT]"
-          git commit -m "🤖 README.md Update" -a || echo "No changes to commit ✅"
-          git push
-
-  submodules:
-    runs-on: ubuntu-latest
-    name: Update Submodules 💫
-    steps:
-
-      - name: Clone repository ⏬
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          submodules: recursive
-
+      - name: Commit README.md changes ✍️
+        run: git commit -am "🤖 README.md Update" || echo "No changes to commit ✅"
+      
       - name: Update Submodules 🔃
         run: git submodule update --recursive --remote
-
-      - name: Commit and push ⏫
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Actions [BOT]"
-          git commit -m "💫 Submodule References Update" -a || echo "No changes to commit ✅"
-          git push
+      
+      - name: Commit Submodule changes ✍️
+        run: git commit -am "💫 Submodule References Update" || echo "No changes to commit ✅"
+      
+      - name: Push changes ⏫
+        run: git push
