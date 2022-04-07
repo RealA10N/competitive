@@ -31,17 +31,17 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install -r scripts/requirements.txt
 
+      - name: Update Submodules 🔃
+        run: git submodule update --recursive --remote
+
+      - name: Commit Submodule changes ✍️
+        run: git commit -am "💫 Submodule References Update" || echo "No changes to commit ✅"
+
       - name: Update README.md 🔃
         run: python3 scripts/update_readme.py
 
       - name: Commit README.md changes ✍️
         run: git commit -am "🤖 README.md Update" || echo "No changes to commit ✅"
-      
-      - name: Update Submodules 🔃
-        run: git submodule update --recursive --remote
-      
-      - name: Commit Submodule changes ✍️
-        run: git commit -am "💫 Submodule References Update" || echo "No changes to commit ✅"
-      
+
       - name: Push changes ⏫
         run: git push
