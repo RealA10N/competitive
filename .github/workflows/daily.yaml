@@ -4,13 +4,15 @@ on:
     - cron: '0 0 * * *' # Every day at midnight.
 
 jobs:
-  update:
+  readme:
     runs-on: ubuntu-latest
     name: Update README.md 📝
     steps:
         
       - name: Clone repository ⏬
         uses: actions/checkout@v2
+        with:
+          submodules: true
       
       - name: Install Python 🐍
         uses: actions/setup-python@v2
@@ -30,4 +32,24 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Actions [BOT]"
           git commit -m "🤖 README.md Update" -a || echo "No changes to commit ✅"
+          git push
+
+  submodules:
+    runs-on: ubuntu-latest
+    name: Update Submodule References 💫
+    steps:
+        
+      - name: Clone repository ⏬
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      
+      - name: Update Submodules 🔃
+        run: git submodule update --recursive --remote
+
+      - name: Commit and push ⏫
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions [BOT]"
+          git commit -m "💫 Submodule References Update" -a || echo "No changes to commit ✅"
           git push
