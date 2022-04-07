@@ -37,9 +37,14 @@ jobs:
 
   submodules:
     runs-on: ubuntu-latest
-    name: Update Submodule References 💫
+    name: Update Submodules 💫
     steps:
-        
+      
+      - name: Setup SSH
+        run: |
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.SUBMODULE_SSH }}'
+
       - name: Clone repository ⏬
         uses: actions/checkout@v2
         with:
