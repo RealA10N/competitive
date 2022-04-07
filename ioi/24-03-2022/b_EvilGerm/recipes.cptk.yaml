@@ -1,8 +1,0 @@
-recipes:
-  - name: b_EvilGerm
-    bake:
-    - g++ b_EvilGerm.cpp grader.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o b_EvilGerm
-    serve: ./b_EvilGerm
-    test:
-      folder: tests
-      timeout: 1

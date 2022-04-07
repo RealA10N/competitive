@@ -1,8 +1,0 @@
-recipes:
-  - name: b_AncientTree
-    bake:
-    - g++ b_AncientTree.cpp grader.cpp -DLOCAL -O2 -Wall -o b_AncientTree
-    serve: ./b_AncientTree
-    test:
-      folder: tests
-      timeout: 2

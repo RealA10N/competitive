@@ -1,8 +1,0 @@
-recipes:
-  - name: b_AmnonInterview
-    bake:
-    - g++ b_AmnonInterview.cpp grader.cpp -DLOCAL -O2 -Wall -o b_AmnonInterview
-    serve: ./b_AmnonInterview
-    test:
-      folder: tests
-      timeout: 0.6

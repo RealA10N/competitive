@@ -1,8 +1,0 @@
-recipes:
-  - name: b_Bakery
-    bake:
-    - g++ b_Bakery.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Bakery
-    serve: ./b_Bakery
-    test:
-      folder: tests
-      timeout: 2

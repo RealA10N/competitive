@@ -1,0 +1,3 @@
+[submodule "ioi"]
+	path = ioi
+	url = https://github.com/RealA10N/competitive-ioi

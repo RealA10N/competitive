@@ -1,8 +1,0 @@
-recipes:
-  - name: b_Hydroplane
-    bake:
-    - g++ b_Hydroplane.cpp grader.cpp -DLOCAL -O2 -Wall -fsanitize=address -ftrapv -o b_Hydroplane
-    serve: ./b_Hydroplane
-    test:
-      folder: tests
-      timeout: 2

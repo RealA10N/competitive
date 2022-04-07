@@ -1,8 +1,0 @@
-recipes:
-  - name: b_Party
-    bake:
-    - g++ b_Party.cpp grader.cpp -DLOCAL -O2 -Wall -o b_Party
-    serve: ./b_Party
-    test:
-      folder: tests
-      timeout: 3
