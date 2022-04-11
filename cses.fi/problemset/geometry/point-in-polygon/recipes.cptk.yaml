@@ -1,0 +1,8 @@
+recipes:
+- name: point-in-polygon
+  bake:
+  - g++ point-in-polygon.cpp -DLOCAL -O2 -Wall -o point-in-polygon
+  serve: ./point-in-polygon
+  test:
+    folder: tests
+    timeout: 1.0
