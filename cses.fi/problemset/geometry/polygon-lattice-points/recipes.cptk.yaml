@@ -1,0 +1,8 @@
+recipes:
+- name: polygon-lattice-points
+  bake:
+  - g++ polygon-lattice-points.cpp -DLOCAL -O2 -Wall -o polygon-lattice-points
+  serve: ./polygon-lattice-points
+  test:
+    folder: tests
+    timeout: 1.0
