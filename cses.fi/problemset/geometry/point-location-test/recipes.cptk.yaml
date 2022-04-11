@@ -1,0 +1,8 @@
+recipes:
+- name: point-location-test
+  bake:
+  - g++ point-location-test.cpp -DLOCAL -O2 -Wall -o point-location-test
+  serve: ./point-location-test
+  test:
+    folder: tests
+    timeout: 1.0
