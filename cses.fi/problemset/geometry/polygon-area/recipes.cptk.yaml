@@ -1,0 +1,8 @@
+recipes:
+- name: polygon-area
+  bake:
+  - g++ polygon-area.cpp -DLOCAL -O2 -Wall -o polygon-area
+  serve: ./polygon-area
+  test:
+    folder: tests
+    timeout: 1.0
