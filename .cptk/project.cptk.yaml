@@ -13,7 +13,9 @@ clone:
     {{ problem.name | slug }}"
   recipe:
     name: "{{ problem.name | slug }}"
-    bake: "g++ {{ problem.name | slug }}.cpp -DLOCAL -O2 -Wall -o {{ problem.name | slug }}"
+    bake: >-
+      g++ {{ problem.name | slug }}.cpp -o {{ problem.name | slug }}
+      -DLOCAL -x c++ -Wall -Wextra -O2 -std=gnu++17 -static -pipe
     serve: "./{{ problem.name | slug }}"
     test:
       folder: tests
