@@ -1,0 +1,9 @@
+recipes:
+- name: list-removals
+  bake:
+  - g++ list-removals.cpp -o list-removals -DLOCAL -x c++ -Wall -Wextra -O2 -std=gnu++17
+    -static -pipe
+  serve: ./list-removals
+  test:
+    folder: tests
+    timeout: 1.0
