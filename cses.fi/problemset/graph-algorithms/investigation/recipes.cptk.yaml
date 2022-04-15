@@ -1,0 +1,9 @@
+recipes:
+- name: investigation
+  bake:
+  - g++ investigation.cpp -o investigation -DLOCAL -x c++ -Wall -Wextra -O2 -std=gnu++17
+    -static -pipe
+  serve: ./investigation
+  test:
+    folder: tests
+    timeout: 1.0
