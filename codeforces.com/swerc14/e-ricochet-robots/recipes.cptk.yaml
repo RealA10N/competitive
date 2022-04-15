@@ -1,0 +1,8 @@
+recipes:
+- name: ricochet-robots
+  bake:
+  - g++ ricochet-robots.cpp -DLOCAL -O2 -Wall -o ricochet-robots
+  serve: ./ricochet-robots
+  test:
+    folder: tests
+    timeout: 1.0
