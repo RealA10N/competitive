@@ -1,0 +1,9 @@
+recipes:
+- name: pizzeria-queries
+  bake:
+  - g++ pizzeria-queries.cpp -o pizzeria-queries -DLOCAL -x c++ -Wall -Wextra -O2
+    -std=gnu++17 -static -pipe
+  serve: ./pizzeria-queries
+  test:
+    folder: tests
+    timeout: 1.0
