@@ -1,0 +1,9 @@
+recipes:
+- name: binomial-coefficients
+  bake:
+  - g++ binomial-coefficients.cpp -o binomial-coefficients -DLOCAL -x c++ -Wall -Wextra
+    -O2 -std=gnu++17 -static -pipe
+  serve: ./binomial-coefficients
+  test:
+    folder: tests
+    timeout: 1.0
