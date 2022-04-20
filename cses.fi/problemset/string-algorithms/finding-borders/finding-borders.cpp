@@ -9,11 +9,10 @@ using namespace std;
 #define all(x) (x).begin(), (x).end()
 #define fori(n, i) for (int i = 0; i < n; i++)
 #define sz(x) (int)(x.size())
+#define ctoi(c) (c - 'a' + 1)
 
 typedef vector<int> vi;
-const int MOD = 3006703054056749;
-const int P = 31;
-#define ctoi(c) (c - 'a' + 1)
+const int MOD = 1e9 - 63, P = 31;
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
@@ -25,13 +24,12 @@ signed main() {
     vi h(n + 1);
     for (int i = 1, p = 1; i <= n; i++, p *= P, p %= MOD)
         h[i] = h[i - 1] + ctoi(s[i - 1]) * p, h[i] %= MOD;
-    sort(all(h));
 
     int hh = 0;
     for (int l = 1; l < n; l++) {
         int i = n - l;
         hh *= P, hh += ctoi(s[i]), hh %= MOD;
-        if (binary_search(all(h), hh)) cout << l << ' ';
+        if (h[l] == hh) cout << l << ' ';
     }
     cout << endl;
 }
