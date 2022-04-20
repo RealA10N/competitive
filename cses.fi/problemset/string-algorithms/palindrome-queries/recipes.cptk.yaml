@@ -1,0 +1,9 @@
+recipes:
+- name: palindrome-queries
+  bake:
+  - g++ palindrome-queries.cpp -o palindrome-queries -DLOCAL -x c++ -Wall -Wextra
+    -O2 -std=gnu++17 -static -pipe
+  serve: ./palindrome-queries
+  test:
+    folder: tests
+    timeout: 1.0
