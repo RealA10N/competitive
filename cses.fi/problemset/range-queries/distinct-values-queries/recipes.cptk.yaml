@@ -1,0 +1,9 @@
+recipes:
+- name: distinct-values-queries
+  bake:
+  - g++ distinct-values-queries.cpp -o distinct-values-queries -DLOCAL -x c++ -Wall
+    -Wextra -O2 -std=gnu++17 -static -pipe
+  serve: ./distinct-values-queries
+  test:
+    folder: tests
+    timeout: 1.0
